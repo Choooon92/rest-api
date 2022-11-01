@@ -1,0 +1,40 @@
+1- Creamos la carpeta contenedora del proyecto.
+2- Instalamos las dependencias, en este caso:
+     - hicimos npm init -y y configuramos el json.
+     - express morgan sequelize pg pg-hstore
+3- Para ser mas ordenados creamos una carpeta src con un archivo index.js
+    -Ver archivo.
+4- Creamos un archivo app.js donde vamos a guardar la configuracion de express
+    -Ver archivo.
+5- Levantamos el servidor.
+6- Para no tener que andar tirando y levantando el servidor a cada rato vamos a instalar nodemon -D
+7- "dev": "nodemon src/index.js" Se lo asignamos en scripts para no tener que estar escribiendo npx nodemon src/index.js, ahora solo npm run dev
+8- Podemos crear las demas carpetas, en este caso voy a crearlas:
+    -database: config de base de datos.
+    -routes: va a tener las url's de nuestro servidor.
+    -controllers: va a contener las funciones que se van a ejecutar cuando llegen las rutas.
+    -models: aca van las tablas de la base de datos, en sequelize se llaman models.
+9- CARPETA DATABASE (VER ARCHIVO).
+10- Importamos el objeto sequelize al archivo index.js y podemos crear una funcion "principal" que sea asincrona y con un try y catch autenticamos que el servidor este funcionando correctamente.
+    -Vamos a index.js
+11- Vamos a crear 2 archivos en la carpeta models (tablas):
+    -Projects.js: Vamos a modelar las tablas del proyecto. (ver archivo projects)
+    -Task.js
+12- Importamos las tablas en index.js
+13- Creamos las relaciones entre las tablas, en este caso las hice en el archivo Project.js.
+14- Creamos las rutas del proyecto. (Ver archivo projects.routes.js)
+    - Las importamos a app.js y ya podemos borrar las importaciones de los archivos projects y task de index.js 
+15- Creamos projects.controllers.js en la carpeta controllers para empezar con la logica de las rutas.
+16- vamos agregando la logica para probar las rutas y las asignamos a sus respectivas rutas, ahora podemos probar en el thunder client si funciona.
+17- Despues de verificar que funciona, vamos a la config de express(app.js) y configuramos algunos middlewares.
+18- Ver archivo projects.controllers, se configuraron los errores, las respuestas, etc.
+19- Vamos a darle logica a put y delete.
+20- Creamos las funciones y las exportamos a projects.router.js para agregarlas a sus rutas.
+21- Ver carpeta projects.controller.js
+22- Creamos la logica para getProject. ver projects.controller.js
+23- Creamos las rutas para task.js y aplicamos su logica. (Ver archivos)
+24- En task.controller.js tenemos la logica de la ruta task.routes.js
+25- Despues de terminar con la logica y las rutas vamos a aplicar las relaciones.
+26- Vamos a crear una ruta nueva y le vamos a configurar la ruta(Ver archivo projects.routes).
+27- Le hacemos la logica en projects.controller
+28- Fin =)
